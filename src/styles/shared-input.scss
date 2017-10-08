@@ -1,0 +1,32 @@
+
+.type-input {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  background-color: white;
+  padding-left: 10px;
+}
+
+.type-input__label {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.type-input__input, .type-input__description {
+  display: block;
+  border: none;
+  margin: 0 auto;
+  margin-top: 10px;
+  border-bottom: 1px solid $grey;
+  width: 90%;
+  min-height: 30px;
+  font-size: 14px;
+  color: $dark-blue;
+}
+
+.type-input__description {
+  min-height: 80px;
+  border: 1px solid $grey;
+}

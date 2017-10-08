@@ -1,0 +1,26 @@
+<div class="type-input">
+  <tool-tip message="lorem" />
+  <bread-crumbs :field="field" :parents="parents" />
+  <div class="type-image__preview">
+    <img
+      v-if="image"
+      :src="image"
+      class="type-image__image"
+    />
+    <div class="type-image__actions">
+      <label :for="generateInputId" class="type-image__label type-image__button">{{uploadLabel}}</label>
+      <input
+        :id="generateInputId"
+        type="file"
+        @change="onFileUpload"
+        class="type-image__input"
+      />
+      <button
+        v-if="image"
+        type="button"
+        class="type-image__remove type-image__button"
+        @click="onRemove"
+      >Delete</button>
+    </div>
+  </div>
+</div>

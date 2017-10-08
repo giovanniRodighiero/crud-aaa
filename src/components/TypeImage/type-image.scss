@@ -1,0 +1,43 @@
+.type-image__preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.type-image__actions {
+  margin: 10px 25px;
+}
+
+.type-image__label, .type-image__remove {
+  display: block;
+  margin: 20px 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.type-image__input {
+  display: none;
+}
+
+.type-image__button {
+  text-align: center;
+  min-width: 80px;
+  height: 30px;
+  padding: 2.5px 10px;
+  color: white;
+  font-size: 14px;
+  border: none;
+}
+
+.type-image__label {
+  background-color: $green;
+}
+
+.type-image__remove {
+  background-color: $red;
+}
+
+.type-image__image {
+  height: 100px;
+}

@@ -1,0 +1,26 @@
+<div class="edit">
+  <notification
+    v-if="showNotification"
+    :type="notificationType"
+    :message="message"
+  />
+  <form action="" ref="form">
+    <field
+      v-for="(field, index) in structure.fields"
+      v-if="!field.readOnly"
+      :field="field"
+      :contents="contents[field.name]"
+      :key="index"
+      :blocks="blocks"
+      @input-change="onInputChange"
+      @add-item="onAddItem"
+      @remove-item="onRemoveItem"
+    />
+  </form>
+  <button
+    v-if="requestDone"
+    class="edit__button"
+    @click="_submit"
+  >Submit</button>
+  <p v-if="!requestDone">Updating ...</p>
+</div>

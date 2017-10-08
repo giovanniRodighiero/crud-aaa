@@ -1,0 +1,12 @@
+<main class="dashboard col-xs-10">
+  <div class="dashboard__single-pages row around-xs">
+    <h1 class="col-xs-12 center-xs">Pages</h1>
+    <card
+      v-for="(page, index) in singlePages"
+      :title="page.label"
+      :name="page.name"
+      :fieldsInfos="prepareFields(page)"
+      :key="index"
+    />
+  </div>
+</main>

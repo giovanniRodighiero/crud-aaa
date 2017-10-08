@@ -1,0 +1,11 @@
+<main class="edit-page col-xs-10" v-if="ready" v-cloak>
+  <h1 class="edit-page__title">{{structure.label}}</h1>
+  <edit
+    :structure="structure"
+    :contents="payload"
+    :submit="submit"
+    :requestDone="updatingDone"
+    :serverErrors="updatingErrors"
+    @contents-updated="onContentsUpdated"
+  />
+</main>

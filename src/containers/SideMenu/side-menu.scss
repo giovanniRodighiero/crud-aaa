@@ -1,0 +1,29 @@
+.side-menu {
+  min-height: 100vh;
+}
+
+.side-menu__wrapper {
+  background-color: $white;
+  height: 100%;
+  padding-left: 5px;
+  padding-top: 15px;
+}
+
+.single-pages, .side-menu__dashboard {
+  position: fixed;
+  left: 10px;
+  top: 30px;
+}
+
+.single-pages {
+  top: 100px;
+  p {
+    margin: 0;
+  }
+}
+
+.single-pages__list {
+  padding-left: 50px;
+  padding-right: 5px;
+  margin: 0;
+}

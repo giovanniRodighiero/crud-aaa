@@ -1,0 +1,26 @@
+<div class="type-input">
+  <tool-tip message="lorem" />
+  <bread-crumbs :field="field" :parents="parents" />
+  <input
+    v-if="useInput"
+    ref="input"
+    class="type-input__input"
+    v-validate="field.validation || ''"
+    v-model="customModel"
+    :name="field.name"
+    :class="{'type-input__input--errors': errors.has(field.name)}"
+  />
+  <textarea
+    v-else
+    class="type-input__description"
+    v-validate="field.validation || ''"
+    v-model="customModel"
+    :name="field.name"
+    :class="{'type-input__input--errors': errors.has(field.name)}"
+  />
+  <transition name="type-input__errors-anim">
+    <ul class="type-input__errors" v-if="errors.has(field.name)">
+      <li class="type-input__error" v-for="error in errors.collect(field.name)">{{error}}</li>
+    </ul>
+  </transition>
+</div>

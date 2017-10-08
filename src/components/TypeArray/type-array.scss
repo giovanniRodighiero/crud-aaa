@@ -1,0 +1,45 @@
+.type-array__add {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.type-array__add > button {
+  &:hover {
+    cursor: pointer;
+  }
+  position: relative;
+  background-color: $green;
+  // border: 1px solid $dark-blue;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 30px 5px 10px;
+  margin: 0 10px;
+  color: white;
+  font-size: 14px;
+  .icon {
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.type-array__item {
+  position: relative;
+}
+
+.type-array__remove {
+  &:hover {
+    cursor: pointer;
+  }
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  background-color: $red;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: white;
+  font-size: 14px;
+}

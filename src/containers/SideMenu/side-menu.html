@@ -1,0 +1,18 @@
+<nav id="side-menu" class="side-menu col-xs-2">
+  <div class="side-menu__wrapper">
+    <div class="side-menu__dashboard">
+      <router-link to="/">Dashboard</router-link>
+    </div>
+    <div class="single-pages">
+      <p>Pages</p>
+      <ul class="single-pages__list">
+        <li
+          v-for="page in singlePages"
+          class="singles-pages__page"
+        >
+          <router-link :to="`/single-pages/${page.name}`">{{page.label}}</router-link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
