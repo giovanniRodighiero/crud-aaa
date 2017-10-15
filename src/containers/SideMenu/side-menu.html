@@ -1,5 +1,8 @@
 <nav id="side-menu" class="side-menu col-xs-2">
   <div class="side-menu__wrapper">
+    <div class="side-menu__account">
+      <button type="button" @click="onLogout()">{{$t('logout')}}</button>
+    </div>
     <div class="side-menu__dashboard">
       <router-link to="/">{{$t('dashboard')}}</router-link>
     </div>

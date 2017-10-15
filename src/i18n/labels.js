@@ -12,7 +12,8 @@ export default {
     uploadNewOne: 'Carica Nuova',
     collapse: 'Nascondi',
     expand: 'Mostra',
-    uploadError: 'Errore durante l\'upload'
+    uploadError: 'Errore durante l\'upload',
+    logout: 'Esci'
   },
   en: {
     pages: 'Pages',
@@ -27,6 +28,7 @@ export default {
     uploadNewOne: 'Upload New One',
     collapse: 'Hide',
     expand: 'Expand',
-    uploadError: 'Error while uploading'
+    uploadError: 'Error while uploading',
+    logout: 'Logout'
   }
 };

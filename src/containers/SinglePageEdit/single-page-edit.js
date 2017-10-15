@@ -17,10 +17,12 @@ export default {
 
   created () {
     // if contents already fetched (ie: coming from homepage), otherwise wait for structure to be available then fetch them
-    if (!!this.contents)
+    if (!!this.contents) {
       this.payload = { ...this.contents };
-    else
+    } else {
+      this.setUpContents(this.structure);
       this.watcher = this.$watch('structure', this.setUpContents);
+    }
   },
 
   methods: {

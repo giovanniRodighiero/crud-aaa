@@ -3,7 +3,7 @@ import mutationTypes from './mutationTypes';
 const mutations = {
 
   // SETS THE LOGIN STATUS TO TRUE OR FALSE
-  [mutationTypes.setRequestStatus] (state, status) {
+  [mutationTypes.setLoggedIn] (state, status) {
     state.loggedIn = status;
   },
 
