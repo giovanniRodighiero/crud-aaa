@@ -14,21 +14,29 @@ export default {
 
   data () {
     return {
-      image: ''
+      image: '',
+      errorUploading: false
     }
   },
 
   methods: {
     onFileUpload: async function (e) {
+      this.errorUploading = false;
       const files = e.target.files || e.dataTransfer.files;
       this.createImage(files[0]);
       const formData = new FormData();
       formData.append('images', files[0]);
-      const fileName = await this.uploadFile(formData);
-      this.$emit('input-change', {
-        parents: [ ...this.parents, this.field ],
-        value: fileName
-      });
+      // TODO: handle errors
+      try {
+        const fileName = await this.uploadFile(formData);
+        this.$emit('input-change', {
+          parents: [ ...this.parents, this.field ],
+          value: fileName
+        });
+      } catch (error) {
+        this.errorUploading = true;
+        console.error(error);
+      }
     },
 
     onRemove: function () {
@@ -63,8 +71,8 @@ export default {
 
     uploadLabel: function () {
       if (!this.image)
-        return 'Upload';
-      return 'Upload new one';
+        return this.$t('upload');
+      return this.$t('uploadNewOne');
     }
   }
 };

@@ -8,7 +8,7 @@
       }">
     <p>{{title}}</p>
     <ul v-if="isDanger" class="notification__list">
-      <li v-for="msg in messageArray">{{msg[1]}}</li>
+      <li v-for="(msg, index) in messageArray" :key="index">{{msg[1]}}</li>
     </ul>
     <p v-else>{{message}}</p>
     <span class="notification__close"></span>

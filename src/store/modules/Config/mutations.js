@@ -29,6 +29,11 @@ const mutations = {
   // SET THE CONFIG FETCH STATUS
   [mutationTypes.setConfigFetchStatus] (state, status) {
     state.configFetched = status;
+  },
+
+  // SET THE LOCALE
+  [mutationTypes.setLocale] (state, locale) {
+    state.locale = locale;
   }
 
 };

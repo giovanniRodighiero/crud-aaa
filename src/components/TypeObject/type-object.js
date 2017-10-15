@@ -40,9 +40,9 @@ export default {
   computed: {
     toggleMessage: function () {
       if (this.open)
-        return 'Collapse';
+        return this.$t('collapse');
       else
-        return 'Expand';
-    }
+        return this.$t('expand');
+    },
   }
 }

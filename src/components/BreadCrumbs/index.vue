@@ -2,7 +2,8 @@
   <label class="type-input__label" :for="field.name">
       <span
         class="type-input__path"
-        v-for="parent in parents"
+        v-for="(parent, index) in parents"
+        :key="index"
       >{{parent.label || `${parent.name}`}}</span>
       <span class="type-input__path">{{labelToUse}}</span>
     </label>

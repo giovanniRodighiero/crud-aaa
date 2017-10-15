@@ -21,6 +21,6 @@
     v-if="requestDone"
     class="edit__button"
     @click="_submit"
-  >Submit</button>
-  <p v-if="!requestDone">Updating ...</p>
+  >{{$t('submit')}}</button>
+  <p v-if="!requestDone">{{$t('updating')}} ...</p>
 </div>

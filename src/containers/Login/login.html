@@ -1,5 +1,5 @@
 <main class="login col-xs-12">
-  <h1 class="login__title">Login</h1>
+  <h1 class="login__title">{{$t('login')}}</h1>
   <div class="login__errors" v-if="showErrors">
     <ul>
       <li v-for="err in errorMessages">{{err}}</li>
@@ -12,7 +12,7 @@
 
       <label for="password">Password</label>
       <input type="password" name="password" id="password" v-model="password"/>
-      <button type="button" @click="submit">Login</button>
+      <button type="button" @click="submit">{{$t('loginButton')}}</button>
     </form>
   </div>
 </main>

@@ -10,7 +10,7 @@
     </symbol>
   </svg>
 
-  <span class="tooltip__message">{{message}}</span>
+  <p class="tooltip__message">{{message}}</p>
 </div>
 </template>
 
@@ -47,31 +47,35 @@ export default {
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 5px;
+  left: 0;
   text-align: right;
 }
 
 .tooltip__icon {
   &:hover {
-    & + span {
+    & + p {
       opacity: 1;
-      height: 100%;
+      visibility: visible;
+      // height: 100%;
     }
   }
 }
 
 .tooltip__message {
+  text-align: left;
+  width: 200px;
   background-color: $white;
   border-radius: 15px;
   border: 1px solid $dark-blue;
   padding: 5px 10px;
-  opacity: 0;
-  transition: opacity .25s ease-out;
   z-index: 10;
   position: absolute;
   top: -25px;
-  left: 15px;
+  left: 20px;
   font-size: 14px;
   line-height: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s ease-out;
 }
 </style>

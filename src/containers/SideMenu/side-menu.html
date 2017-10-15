@@ -1,10 +1,10 @@
 <nav id="side-menu" class="side-menu col-xs-2">
   <div class="side-menu__wrapper">
     <div class="side-menu__dashboard">
-      <router-link to="/">Dashboard</router-link>
+      <router-link to="/">{{$t('dashboard')}}</router-link>
     </div>
     <div class="single-pages">
-      <p>Pages</p>
+      <p>{{$t('pages')}}</p>
       <ul class="single-pages__list">
         <li
           v-for="page in singlePages"

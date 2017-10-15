@@ -1,5 +1,5 @@
 <div class="type-input">
-  <tool-tip message="lorem" />
+  <tool-tip :message="field.tipMessage" />
   <bread-crumbs :field="field" :parents="parents" />
   <input
     v-if="useInput"

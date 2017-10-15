@@ -1,5 +1,5 @@
 <div class="type-array type-input">
-    <tool-tip message="lorem" />
+    <tool-tip :message="field.tipMessage" />
     <bread-crumbs :field="field" :parents="parents" />
     <button
     type="button"
@@ -58,7 +58,7 @@
               type="button"
               class="type-array__remove"
               @click="removeBlock(blocksIndex)"
-            >remove</button>
+            >{{$t('remove')}}</button>
           </div>
         </div>
       </div>

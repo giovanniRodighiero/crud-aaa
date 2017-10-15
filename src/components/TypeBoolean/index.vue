@@ -1,10 +1,11 @@
 <template>
   <div class="type-input">
-    <tool-tip message="lorem" />
+    <tool-tip :message="field.tipMessage" />
     <bread-crumbs :field="field" :parents="parents" />
     <input
       class="type-input__input"
       type="checkbox"
+      v-validate="field.validation || ''"
       :name="field.name"
       :value="checkboxValue"
       :checked="contents"

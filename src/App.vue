@@ -8,11 +8,9 @@
 <script>
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import VeeValidate from 'vee-validate';
-import { veeMessages } from '@/i18n';
 
 export default {
-  name: 'app',
+  name: 'CrudAaa',
   props: {
     baseUrl: {
       type: String,
@@ -28,17 +26,20 @@ export default {
       type: String,
       required: false,
       default: '/login'
+    },
+    lang: {
+      type: String,
+      default: 'en'
     }
   },
-  created() {
-    Vue.use(VeeValidate, {
-      locale: 'it',
-      dictionary: {
-        it: {
-          messages: veeMessages
-        }
-      }
-    });
+  created () {
+
+    // SET UP VALIDATION MESSAGES LANG
+    this.$validator.locale = this.lang;
+
+    // SET UP GLOBAL LANG
+    this.setLocale(this.lang);
+    this.$i18n.locale = this.lang;
 
     // SET UP BASE URL FOR AXIOS
     this.axios.defaults.baseUrl = this.baseUrl;
@@ -53,12 +54,15 @@ export default {
   methods: {
     ...mapActions('ConfigModule', [
       'initialSetup',
+      'setLocale'
     ])
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./styles/main-styles.scss";
+
 .root-wrapper {
   width: 100%;
 }

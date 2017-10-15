@@ -15,6 +15,7 @@ import { beforeEach } from './guards';
 Vue.use(Router);
 
 const router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/login',

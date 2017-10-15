@@ -12,9 +12,9 @@ const actions = {
     return new Promise(async (resolve, reject) => {
       try {
         const configObject = await Vue.axios.get(getters.fullConfigEndpoint);
-        const { config, singlePages } = configObject.data;
+        const { global, singlePages } = configObject.data;
         commit(configModule_mutationTypes.setConfigFetchStatus, true);
-        commit(configModule_mutationTypes.setUploadEndpoint, config.uploadEndpoint);
+        commit(configModule_mutationTypes.setUploadEndpoint, global.uploadEndpoint);
         commit(`SinglePagesModule/${singlePagesModule_mutationTypes.setSinglePages}`, singlePages, { root: true });
         return resolve();
       } catch (error) {
@@ -30,6 +30,11 @@ const actions = {
     commit(configModule_mutationTypes.setConfigEndpoint, options.configEndpoint);
     commit(configModule_mutationTypes.setLoginEndpoint, options.loginEndpoint);
     dispatch('setConfig');
+  },
+
+  // SET LOCALE PROXY ACTION
+  setLocale: ({ commit }, locale) => {
+    commit(configModule_mutationTypes.setLocale, locale);
   }
 
 };

@@ -2,8 +2,9 @@ const state = {
   baseUrl: false,
   configEndpoint: '/admin-config',
   loginEndpoint :'/login',
-  uploadEndpoint: '/uploads',
+  uploadEndpoint: false,
   configFetched: false,
+  locale: 'it'
 };
 
 export default state;

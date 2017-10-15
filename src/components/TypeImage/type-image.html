@@ -1,7 +1,8 @@
 <div class="type-input">
-  <tool-tip message="lorem" />
+  <tool-tip :message="field.tipMessage" />
   <bread-crumbs :field="field" :parents="parents" />
   <div class="type-image__preview">
+    <p class="type-image__errors" v-if="errorUploading">{{$t('uploadError')}}</p>
     <img
       v-if="image"
       :src="image"
@@ -12,6 +13,7 @@
       <input
         :id="generateInputId"
         type="file"
+        v-validate="field.validation || ''"
         @change="onFileUpload"
         class="type-image__input"
       />
@@ -20,7 +22,7 @@
         type="button"
         class="type-image__remove type-image__button"
         @click="onRemove"
-      >Delete</button>
+      >{{$t('delete')}}</button>
     </div>
   </div>
 </div>

@@ -4,7 +4,11 @@ const getters = {
   fullConfigEndpoint: state =>  !!state.baseUrl ? `${state.baseUrl}${state.configEndpoint}` : false,
 
   // GET THE FULL UPLOAD ENDPOINT
-  fullUploadEndpoint: state => `${state.baseUrl}${state.uploadEndpoint}`,
+  fullUploadEndpoint: state => {
+      if (!state.uploadEndpoint)
+        return false;
+      return `${state.baseUrl}${state.uploadEndpoint}`
+  },
 
   // STATE PROXY
   isConfigAlreadyFetched: state => state.configFetched,
