@@ -41,25 +41,27 @@
         </button>
         </div>
         <div>
-          <div
-            class="type-array__item"
-            v-for="(blocksContent, blocksIndex) in contents"
-          >
-            <type-object
-              class="field"
-              :field="blockField(blocksContent, blocksIndex)"
-              :contents="blocksContent"
-              :parents="[...parents, field ]"
-              :blocks="blocks"
-              @input-change="onInputChange"
-              :key="blocksIndex"
-            />
-            <button
-              type="button"
-              class="type-array__remove"
-              @click="removeBlock(blocksIndex)"
-            >{{$t('remove')}}</button>
-          </div>
+          <draggable v-model='myList'>
+            <div
+              class="type-array__item"
+              v-for="(blocksContent, blocksIndex) in contents"
+            >
+              <type-object
+                class="field"
+                :field="blockField(blocksContent, blocksIndex)"
+                :contents="blocksContent"
+                :parents="[...parents, field ]"
+                :blocks="blocks"
+                @input-change="onInputChange"
+                :key="blocksIndex"
+              />
+              <button
+                type="button"
+                class="type-array__remove"
+                @click="removeBlock(blocksIndex)"
+              >{{$t('remove')}}</button>
+            </div>
+          </draggable>
         </div>
       </div>
     </transition>

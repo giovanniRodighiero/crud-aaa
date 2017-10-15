@@ -27,6 +27,9 @@
 
 .type-array__item {
   position: relative;
+  &:hover {
+    cursor: move;
+  }
 }
 
 .type-array__remove {

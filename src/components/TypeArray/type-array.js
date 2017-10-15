@@ -1,3 +1,5 @@
+import draggable from 'vuedraggable';
+
 import Field from '@/components/Field';
 import BreadCrumbs from '@/components/BreadCrumbs';
 import ToolTip from '@/components/ToolTip';
@@ -11,7 +13,8 @@ export default {
     Field,
     BreadCrumbs,
     ToolTip,
-    TypeObject
+    TypeObject,
+    draggable
   },
 
   data () {
@@ -72,6 +75,19 @@ export default {
 
     blocksToUse: function () {
       return this.blocks[this.field.blocksStructure];
+    },
+
+    myList: {
+      get () {
+        return this.contents;
+      },
+      set (value) {
+        console.log(value, [...this.parents, this.field]);
+        this.$emit('input-change', {
+          parents: [ ...this.parents, this.field ],
+          value
+        });
+      }
     }
   }
 }
