@@ -1,0 +1,53 @@
+.login__title {
+  text-align: center;
+}
+
+.login__form {
+  text-align: center;
+}
+
+.login__errors {
+  margin: 50px auto;
+  & > ul > li {
+    color: $red;
+    font-size: 18px;
+  }
+}
+
+.login__item {
+  text-align: center;
+  margin: 100px 0;
+  & > label {
+    display: block;
+    margin: 15px 0;
+    text-transform: uppercase;
+    color: $dark-blue;
+    font-weight: bold;
+  }
+  & > input {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    height: 50px;
+    font-size: 18px;
+    padding: 5px 20px;
+    border: none;
+    border-bottom: 3px solid $dark-blue;
+    text-align: center;
+    color: $grey;
+  }
+  & > button {
+    border: none;
+    background-color: $green;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    transition: background-color .25s ease-out, color .25s ease-out, border .25s ease-out;
+    &:hover {
+      cursor: pointer;
+      background-color: white;
+      color: $green;
+      border: 2px solid $green;
+    }
+  }
+}

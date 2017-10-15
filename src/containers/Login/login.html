@@ -1,18 +1,27 @@
 <main class="login col-xs-12">
-  <h1 class="login__title">{{$t('login')}}</h1>
-  <div class="login__errors" v-if="showErrors">
-    <ul>
-      <li v-for="err in errorMessages">{{err}}</li>
-    </ul>
-  </div>
-  <div class="login__form-wrapper">
-    <form class="login__form">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" v-model="email" />
-
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" v-model="password"/>
-      <button type="button" @click="submit">{{$t('loginButton')}}</button>
-    </form>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="login__title">{{$t('login')}}</h1>
+      <div class="login__errors" v-if="showErrors">
+        <ul>
+          <li v-for="err in errorMessages">{{err}}</li>
+        </ul>
+      </div>
+      <div class="login__form-wrapper">
+        <form class="login__form">
+          <div class="login__item">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" v-model="email" />
+          </div>
+          <div class="login__item">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" v-model="password"/>
+          </div>
+          <div class="login__item">
+            <button type="button" @click="submit">{{$t('loginButton')}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </main>
