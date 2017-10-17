@@ -1,11 +1,11 @@
 import { mapGetters, mapActions, mapState } from 'vuex';
 
-import Card from '@/components/Card';
+import BaseCard from '@/components/BaseCard';
 
 export default {
   name: 'dashboard',
   components: {
-    Card
+    BaseCard
   },
 
   created () {
@@ -19,14 +19,26 @@ export default {
     ]),
 
     // CREATE LABEL/VALUE OBJECTS TO USE WITH CARDS
-    prepareFields ({ label, name, fields }) {
+    prepareFields ({ label, name, fields, contents = false }) {
+      if (!contents)
+        contents = this.contents;
       const preparedFields = [];
       fields.forEach(field => {
-        if (field.showInHomepage && this.contents[name]) {
-          preparedFields.push({
+        if (field.showInHomepage && contents[name]) {
+          const aux = {
             label: field.label,
-            value: this.contents[name][field.name]
-          });
+            value: contents[name][field.name],
+            type: field.type,
+          };
+          if (field.type === 'object')
+            aux['infos'] = this.prepareFields({
+              name: field.name,
+              fields: field.fields,
+              contents: contents[name]
+            });
+          if (field.type === 'array')
+            aux['value'] = contents[name][field.name].length;
+          preparedFields.push(aux);
         }
       });
       return preparedFields;

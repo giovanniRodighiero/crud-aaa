@@ -13,7 +13,8 @@ export default {
     collapse: 'Nascondi',
     expand: 'Mostra',
     uploadError: 'Errore durante l\'upload',
-    logout: 'Esci'
+    logout: 'Esci',
+    edit: 'Modifica'
   },
   en: {
     pages: 'Pages',
@@ -29,6 +30,7 @@ export default {
     collapse: 'Hide',
     expand: 'Expand',
     uploadError: 'Error while uploading',
-    logout: 'Logout'
+    logout: 'Logout',
+    edit: 'Edit'
   }
 };

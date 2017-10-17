@@ -9,10 +9,11 @@
         class="_card__field"
         :key="index"
       >
-        <span class="_card__field-label">{{field.label}}</span>
-        <p class="_card__field-value">{{field.value}}</p>
+        <base-card-field
+          v-bind="field"
+        />
       </li>
     </ul>
-    <router-link :to="`/single-pages/${name}`" class="_card__link">Modifica</router-link>
+    <router-link :to="`/single-pages/${name}`" class="_card__link">{{$t('edit')}}</router-link>
   </div>
 </div>

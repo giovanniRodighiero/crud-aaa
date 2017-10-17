@@ -1,5 +1,7 @@
+import BaseCardField from '@/components/BaseCardField';
+
 export default {
-  name: 'Card',
+  name: 'BaseCard',
   props: {
     title: {
       type: String,
@@ -17,4 +19,7 @@ export default {
       required: false
     }
   },
+  components: {
+    BaseCardField
+  }
 }
