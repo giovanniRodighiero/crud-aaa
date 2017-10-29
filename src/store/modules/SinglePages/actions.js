@@ -48,7 +48,7 @@ const actions = {
       const response = await Vue.axios.put(`${getters.baseUrl}${page.endpoint}`, payload);
       commit(mutationTypes.updatePage, { done: true });
     } catch (errors) {
-      console.log('errors', errors.response)
+      console.errors('errors', errors.response)
       commit(mutationTypes.updatePage, { done: true, errors: errors.response });
     }
   }

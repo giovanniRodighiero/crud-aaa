@@ -20,7 +20,7 @@ const actions = {
         );
         resolve(result.data.fileName);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         reject(error);
       }
     });

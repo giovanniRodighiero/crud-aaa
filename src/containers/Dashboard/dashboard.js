@@ -11,7 +11,6 @@ export default {
   created () {
     if (!this.pagesContentsAreFetched)
       this.fetchAllPagesContents();
-    console.log(this.singlePages)
     // watch for changes on singlePages array, for each of them the its contents
     // if (this.singlePages && this.singlePages)
     this.$store.watch(_ => this.singlePages, _ => this.fetchAllPagesContents());

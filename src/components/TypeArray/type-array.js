@@ -82,7 +82,6 @@ export default {
         return this.contents;
       },
       set (value) {
-        console.log(value, [...this.parents, this.field]);
         this.$emit('input-change', {
           parents: [ ...this.parents, this.field ],
           value
