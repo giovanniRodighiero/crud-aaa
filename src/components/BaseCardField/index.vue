@@ -25,7 +25,7 @@ export default {
       type: String
     },
     value: {
-      type: [String, Object]
+      type: [String, Object, Number, Boolean]
     },
     type: {
       type: String

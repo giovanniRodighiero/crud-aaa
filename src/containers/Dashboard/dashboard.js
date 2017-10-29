@@ -9,8 +9,12 @@ export default {
   },
 
   created () {
+    if (!this.pagesContentsAreFetched)
+      this.fetchAllPagesContents();
+    console.log(this.singlePages)
     // watch for changes on singlePages array, for each of them the its contents
-    this.$store.watch(() => this.singlePages, () => this.fetchAllPagesContents());
+    // if (this.singlePages && this.singlePages)
+    this.$store.watch(_ => this.singlePages, _ => this.fetchAllPagesContents());
   },
   methods: {
     ...mapActions('SinglePagesModule', [
@@ -46,7 +50,8 @@ export default {
   },
   computed: {
     ...mapGetters('SinglePagesModule', [
-      'singlePages'
+      'singlePages',
+      'pagesContentsAreFetched'
     ]),
     ...mapState('SinglePagesModule', {
       contents: state => state.pagesContents,

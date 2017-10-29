@@ -14,7 +14,8 @@ export default {
     expand: 'Mostra',
     uploadError: 'Errore durante l\'upload',
     logout: 'Esci',
-    edit: 'Modifica'
+    edit: 'Modifica',
+    singlePages: 'Pagine uniche'
   },
   en: {
     pages: 'Pages',
@@ -31,6 +32,7 @@ export default {
     expand: 'Expand',
     uploadError: 'Error while uploading',
     logout: 'Logout',
-    edit: 'Edit'
+    edit: 'Edit',
+    singlePages: 'Unique pages'
   }
 };

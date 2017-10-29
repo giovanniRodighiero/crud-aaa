@@ -27,6 +27,13 @@
 
 ._card__field {
   padding: 10px 0;
+  & > .base-card-field-simple {
+    padding: 0;
+    border-bottom: 1px solid $dark-blue;
+    & > .base-card-field-simple__label {
+      font-weight: bold;
+    }
+  }
 }
 
 ._card__field-label {

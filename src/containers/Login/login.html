@@ -8,7 +8,10 @@
         </ul>
       </div>
       <div class="login__form-wrapper">
-        <form class="login__form">
+        <form
+        novalidate
+        class="login__form"
+        @submit.prevent="submit">
           <div class="login__item">
             <label for="email">Email</label>
             <input type="text" name="email" id="email" v-model="email" />
@@ -18,7 +21,7 @@
             <input type="password" name="password" id="password" v-model="password"/>
           </div>
           <div class="login__item">
-            <button type="button" @click="submit">{{$t('loginButton')}}</button>
+            <button type="submit">{{$t('loginButton')}}</button>
           </div>
         </form>
       </div>

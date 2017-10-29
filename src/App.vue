@@ -32,7 +32,7 @@ export default {
       default: 'en'
     }
   },
-  created () {
+  async created () {
 
     // SET UP VALIDATION MESSAGES LANG
     this.$validator.locale = this.lang;
@@ -45,7 +45,7 @@ export default {
     this.axios.defaults.baseUrl = this.baseUrl;
 
     // SET THE INFOS IN THE STORE (ConfigModule)
-    this.initialSetup({
+    await this.initialSetup({
       baseUrl: this.baseUrl,
       configEndpoint: this.configEndpoint,
       loginEndpoint: this.loginEndpoint

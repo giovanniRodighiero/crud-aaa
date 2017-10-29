@@ -13,6 +13,7 @@ export default {
       'submitLogin'
     ]),
     submit: async function () {
+      console.log('submit', this.email, this.password)
       const response = await this.submitLogin({ email: this.email, password: this.password });
       if (!!response) {
         window.localStorage.setItem('crudaaa', response.token);
