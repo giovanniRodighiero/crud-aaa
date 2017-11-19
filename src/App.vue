@@ -1,7 +1,9 @@
 <template>
   <div :class="$style.rootWrapper">
-    <router-view name="SideMenu"></router-view>
-    <router-view></router-view>
+    <div class="row">
+      <router-view name="SideMenu"></router-view>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
