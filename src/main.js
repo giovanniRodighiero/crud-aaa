@@ -1,3 +1,4 @@
+import '../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
 
 import Vue from 'vue';
 import App from './App';

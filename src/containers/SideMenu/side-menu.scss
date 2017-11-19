@@ -1,51 +1,39 @@
-.side-menu {
+$wrapper-padding: 10px !default;
+$dashboard-margin: 50px !default;
+$page-kind-title-size: 22px !default;
+$page-kind-title-padding: 15px !default;
+
+.sideMenu {
+
+}
+
+.wrapper {
+  background-color: $color-dark;
   min-height: 100vh;
-}
-
-.side-menu__wrapper {
-  background-color: $white;
-  height: 100%;
-  padding-left: 5px;
-  padding-top: 15px;
-}
-
-.side-menu__account {
+  padding: rem($wrapper-padding);
   text-align: center;
-  & > button {
-    position: fixed;
-    left: 10px;
-    border: none;
-    background-color: $color-red;
-    color: white;
-    padding: 5px 10px;
-    font-size: 16px;
-    transition: background-color .25s ease-out, color .25s ease-out, border .25s ease-out;
-    &:hover {
-      cursor: pointer;
-      background-color: white;
-      color: $color-red;
-      border: 1px solid $color-red;
-    }
-  }
+  color: $color-light;
 }
 
-.single-pages, .side-menu__dashboard {
-  position: fixed;
-  left: 10px;
-  top: 80px;
+.dashboard {
+  margin: rem($dashboard-margin) auto;
 }
 
-.single-pages {
-  top: 150px;
-  p {
-    margin: 0;
-  }
+.singlePages {
+  margin: rem($dashboard-margin) auto;
 }
 
-.single-pages__list {
-  padding-left: 50px;
-  padding-right: 5px;
+.pageKindTitle {
+  font-size: rem($page-kind-title-size);
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: rem($page-kind-title-padding) 0;
   margin: 0;
+}
+
+.pagesListItem {
+  margin: rem(20) 0;
+  list-style-type: none;
 }
 
 .singles-pages__page {

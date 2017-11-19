@@ -1,21 +1,27 @@
-<nav id="side-menu" class="side-menu col-xs-2">
-  <div class="side-menu__wrapper">
-    <div class="side-menu__account">
-      <button type="button" @click="onLogout()">{{$t('logout')}}</button>
-    </div>
-    <div class="side-menu__dashboard">
-      <router-link to="/">{{$t('dashboard')}}</router-link>
-    </div>
-    <div class="single-pages">
-      <p>{{$t('pages')}}</p>
-      <ul class="single-pages__list">
-        <li
-          v-for="page in singlePages"
-          class="singles-pages__page"
-        >
-          <router-link :to="`/single-pages/${page.name}`">{{page.label}}</router-link>
-        </li>
-      </ul>
+<nav id="side-menu" :class="$style.sideMenu">
+  <div class="row">
+    <div class="col-xs-2">
+      <div :class="$style.wrapper">
+        <div :class="$style.account">
+          <delete-btn :label="$t('logout')" @click="onLogout()"/>
+        </div>
+        <div :class="$style.dashboard">
+          <side-menu-link to="/" :label="$t('dashboard')" />
+        </div>
+        <div :class="$style.singlePages">
+          <p :class="$style.pageKindTitle">{{$t('pages')}}</p>
+          <ul :class="$style.pagesList">
+            <li
+              v-for="page in singlePages"
+              :class="$style.pagesListItem"
+            >
+              <side-menu-link
+                :to="`/single-pages/${page.name}`"
+                :label="page.label" />
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </nav>

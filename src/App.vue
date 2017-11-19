@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.root-wrapper">
+  <div :class="$style.rootWrapper">
     <router-view name="SideMenu"></router-view>
     <router-view></router-view>
   </div>
@@ -61,10 +61,9 @@ export default {
 </script>
 
 <style lang="scss" module>
-@import '../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
 @import "./styles/app.scss";
 
-.root-wrapper {
+.rootWrapper {
   width: 100%;
 }
 </style>

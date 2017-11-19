@@ -65,6 +65,7 @@ export default {
   .neutralLabel {
     &:hover {
       transform: translateX(-15%);
+
       &::after {
         opacity: 1;
         transform: rotateZ(50deg) translateY(-10%);
