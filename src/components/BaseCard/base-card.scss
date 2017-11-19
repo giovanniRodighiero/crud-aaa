@@ -1,10 +1,10 @@
-._card {
+.card {
   border: 1px solid $color-dark;
   position: relative;
   margin: 15px;
 }
 
-._card__title {
+.title {
   text-align: center;
   padding: 10px 5px;
   width: 100%;
@@ -18,14 +18,14 @@
   }
 }
 
-._card__field-list {
+.fieldList {
   margin: 0 30px;
   padding: 0;
   list-style: none;
   margin-bottom: 50px;
 }
 
-._card__field {
+.field {
   padding: 10px 0;
   & > .base-card-field-simple {
     padding: 0;
@@ -36,26 +36,18 @@
   }
 }
 
-._card__field-label {
+.fieldLabel {
   text-transform: capitalize;
   font-weight: bold;
 }
 
-._card__field-value {
+.fieldValue {
   margin: 0;
   padding-left: 10px;
 }
 
-._card__link-wrapper {
-  position: relative;
-  height: 40px;
-}
-
-._card__link {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  padding: 5px 10px;
-  background-color: $color-green;
-  color: white;
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: rem(5);
 }

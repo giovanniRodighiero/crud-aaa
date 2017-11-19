@@ -1,11 +1,13 @@
 import { mapGetters, mapActions, mapState } from 'vuex';
 
 import BaseCard from '@/components/BaseCard';
+import PageHero from '@/components/PageHero';
 
 export default {
   name: 'dashboard',
   components: {
-    BaseCard
+    BaseCard,
+    PageHero
   },
 
   created () {

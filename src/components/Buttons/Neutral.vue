@@ -1,5 +1,17 @@
 <template>
-  <button :class="[$style.btn, theme]" :type="type" @click="$emit('click')">
+  <router-link
+    v-if="to"
+    :class="[$style.btn, theme]"
+    :to="to"
+  >
+    <span :class="[$style.label, $style.neutralLabel]">{{label}}</span>
+  </router-link>
+  <button
+    v-else
+    :class="[$style.btn, theme]"
+    :type="type"
+    @click="$emit('click')"
+  >
     <span :class="[$style.label, $style.neutralLabel]">{{label}}</span>
   </button>
 </template>
@@ -15,7 +27,8 @@ export default {
       type: Boolean,
       default: false
     },
-    label: String
+    label: String,
+    to: String | Object
   },
 
   computed: {
@@ -37,6 +50,7 @@ export default {
 
     &:hover {
       @extend .black;
+      border: 2px solid $color-dark !important;
     }
   }
 

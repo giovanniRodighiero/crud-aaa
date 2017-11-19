@@ -6,7 +6,7 @@
     :type="type"
   />
   <div v-else>
-    <span class="base-card-field__label">{{label}}</span>
+    <span :class="$style.label">{{label}}</span>
     <base-card-field
       v-for="(info, index) in infos"
       :key="index"
@@ -40,8 +40,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .base-card-field__label {
+<style lang="scss" module>
+  .label {
     font-weight: bold;
     border-bottom: 1px solid $color-dark;
     width: 100%;

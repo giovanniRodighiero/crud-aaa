@@ -1,4 +1,5 @@
 import BaseCardField from '@/components/BaseCardField';
+import BaseBtn from '@/components/Buttons/Neutral';
 
 export default {
   name: 'BaseCard',
@@ -20,6 +21,7 @@ export default {
     }
   },
   components: {
-    BaseCardField
+    BaseCardField,
+    BaseBtn
   }
 }

@@ -1,8 +1,15 @@
 <template>
-  <div class="base-card-field-simple">
-    <span class="base-card-field-simple__label">{{label}}:</span>
-    <p class="base-card-field-simple__value" v-if="type === 'html-editor'" v-html="truncatedHtml"></p>
-    <p class="base-card-field-simple__value" v-else>{{value}}</p>
+  <div :class="$style.field">
+    <span :class="$style.label">{{label}}:</span>
+    <p
+      v-if="type === 'html-editor'"
+      v-html="truncatedHtml"
+      :class="$style.value">
+    </p>
+    <p
+      v-else
+      :class="$style.value"
+    >{{value}}</p>
   </div>
 </template>
 
@@ -31,18 +38,19 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .base-card-field-simple {
+<style lang="scss" module>
+  .field {
     display: flex;
-    margin: 5px 0;
+    margin: rem(10) 0;
     padding-left: 10px;
   }
 
-  .base-card-field-simple__label {
+  .label {
     text-transform: capitalize;
+    font-size: rem(18);
   }
 
-  .base-card-field-simple__value {
+  .value {
     margin: 0 10px;
     p {
       margin: 0;
