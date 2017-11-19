@@ -6,7 +6,7 @@
 .edit__button {
   border-radius: none;
   border: none;
-  background-color: $green;
+  background-color: $color-green;
   color: $white;
   width: 130px;
   height: 40px;
@@ -19,9 +19,9 @@
     color .25s ease-out,
     border .25s ease-out;
   &:hover {
-    border: 1px solid $green;
+    border: 1px solid $color-green;
     background-color: $white;
-    color: $green;
+    color: $color-green;
     transform: scale(1.05);
     cursor: pointer;
   }

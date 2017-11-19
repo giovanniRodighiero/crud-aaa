@@ -1,5 +1,5 @@
 ._card {
-  border: 1px solid $dark-blue;
+  border: 1px solid $color-dark;
   position: relative;
   margin: 15px;
 }
@@ -8,7 +8,7 @@
   text-align: center;
   padding: 10px 5px;
   width: 100%;
-  background-color: $dark-blue;
+  background-color: $color-dark;
   p {
     text-transform: uppercase;
     font-size: 18px;
@@ -29,7 +29,7 @@
   padding: 10px 0;
   & > .base-card-field-simple {
     padding: 0;
-    border-bottom: 1px solid $dark-blue;
+    border-bottom: 1px solid $color-dark;
     & > .base-card-field-simple__label {
       font-weight: bold;
     }
@@ -56,6 +56,6 @@
   bottom: 5px;
   right: 5px;
   padding: 5px 10px;
-  background-color: $green;
+  background-color: $color-green;
   color: white;
 }

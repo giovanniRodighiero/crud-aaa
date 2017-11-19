@@ -8,8 +8,8 @@
     cursor: pointer;
   }
   position: relative;
-  background-color: $green;
-  // border: 1px solid $dark-blue;
+  background-color: $color-green;
+  // border: 1px solid $color-dark;
   border: none;
   border-radius: 15px;
   padding: 5px 30px 5px 10px;
@@ -39,7 +39,7 @@
   position: absolute;
   top: 7px;
   right: 5px;
-  background-color: $red;
+  background-color: $color-red;
   border: none;
   border-radius: 15px;
   padding: 5px 10px;

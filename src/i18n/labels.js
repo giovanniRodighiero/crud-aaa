@@ -15,7 +15,8 @@ export default {
     uploadError: 'Errore durante l\'upload',
     logout: 'Esci',
     edit: 'Modifica',
-    singlePages: 'Pagine uniche'
+    singlePages: 'Pagine uniche',
+    errorsTitle: 'Ops ! Si è verificato un errore.'
   },
   en: {
     pages: 'Pages',
@@ -33,6 +34,7 @@ export default {
     uploadError: 'Error while uploading',
     logout: 'Logout',
     edit: 'Edit',
-    singlePages: 'Unique pages'
+    singlePages: 'Unique pages',
+    errorsTitle: 'Ops ! An error occured.'
   }
 };

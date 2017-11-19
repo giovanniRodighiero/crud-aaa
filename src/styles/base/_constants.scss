@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/************    COLORS    ************/
+$color-green: #51D58C;
+$color-red: #FF5151;
+$color-dark-blue: #122C34;
+$color-dark-violet: #3B3964;
+$white: white;
+$color-grey: #D1D1D1;
+
+/************     COLORS PROXIES    ************/
+$link-color: $color-red;
+$color-text: $color-dark-violet;
+$color-dark: $color-dark-violet;
+$color-light: $white;
+$color-background: $white;
+
+/************     Z-INDEXES    ************/
+$z-index__side-menu: 100;

@@ -43,7 +43,7 @@ export default {
 <style lang="scss">
   .base-card-field__label {
     font-weight: bold;
-    border-bottom: 1px solid $dark-blue;
+    border-bottom: 1px solid $color-dark;
     width: 100%;
     display: block;
   }

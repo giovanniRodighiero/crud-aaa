@@ -52,11 +52,9 @@ exports.cssLoaders = function (options) {
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass', {
       includePaths: [
-        // '~src/styles'
-        path.resolve('./src/styles'),
+        path.resolve('./src/styles')
       ],
-      // data: '@import "~src/styles/main";'
-      data: `@import "~${path.resolve('./src/styles/main')}";`
+      data: `@import "~${path.resolve('./src/styles/global')}";`
     }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')

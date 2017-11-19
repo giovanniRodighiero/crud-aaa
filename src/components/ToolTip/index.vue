@@ -66,7 +66,7 @@ export default {
   width: 200px;
   background-color: $white;
   border-radius: 15px;
-  border: 1px solid $dark-blue;
+  border: 1px solid $color-dark;
   padding: 5px 10px;
   z-index: 10;
   position: absolute;

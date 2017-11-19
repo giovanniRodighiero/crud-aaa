@@ -19,15 +19,15 @@
   border: none;
   margin: 0 auto;
   margin-top: 10px;
-  border-bottom: 1px solid $grey;
+  border-bottom: 1px solid $color-grey;
   width: 90%;
   min-height: 30px;
   font-size: 14px;
-  color: $dark-blue;
+  color: $color-dark;
   padding: 5px 10px;
 }
 
 .type-input__description {
   min-height: 80px;
-  border: 1px solid $grey;
+  border: 1px solid $color-grey;
 }

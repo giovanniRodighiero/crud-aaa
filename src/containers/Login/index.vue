@@ -2,4 +2,4 @@
 
 <script src="./login.js"></script>
 
-<style lang="scss" src="./login.scss"></style>
+<style lang="scss" src="./login.scss" module></style>
