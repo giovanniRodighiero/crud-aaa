@@ -67,5 +67,6 @@ export default {
 
 .rootWrapper {
   width: 100%;
+  overflow-x: hidden;
 }
 </style>

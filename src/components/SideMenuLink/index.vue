@@ -22,13 +22,18 @@ $font-size: 18px !default;
     font-size: rem($font-size);
     text-decoration: none;
     display: block;
+    &:hover {
+      .label {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
   }
 
   .label {
-    display: block;
-    width: 90%;
+    width: 100%;
     height: 100%;
-    padding-right: rem(10);
     padding-bottom: rem(5);
     position: relative;
     text-transform: capitalize;
@@ -44,12 +49,6 @@ $font-size: 18px !default;
       transform: scaleX(0.2);
       transition: transform .25s ease-out;
       transform-origin: left;
-    }
-
-    &:hover {
-      &::after {
-        transform: scaleX(1);
-      }
     }
   }
 

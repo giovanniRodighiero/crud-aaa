@@ -1,38 +1,13 @@
 <div class="type-object type-input">
+  <span>OK</span>
   <tool-tip :message="field.tipMessage" />
-  <bread-crumbs :field="field" :parents="parents" />
-  <button
-    type="button"
-    @click="toggleVisibility"
-    class="type-object__toggle"
-  >{{toggleMessage}}
-    <svg class="icon icon--button" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <use :xlink:href="open ? '#open' : '#closed'"></use>
-      <defs>
-        <symbol id="closed" viewBox="0 0 44 32">
-        <title>menu3</title>
-        <path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path>
-        <path d="M31 14l6 6 6-6z"></path>
-      </symbol>
-        <symbol id="open" viewBox="0 0 44 32">
-        <title>menu4</title>
-        <path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path>
-        <path d="M31 20l6-6 6 6z"></path>
-      </symbol>
-      </defs>
-    </svg>
-  </button>
-  <transition name="type-object__accordion">
-    <div v-if="open">
-      <field
-        v-for="(subField, index) in field.fields"
-        v-if="!subField.readOnly"
-        :field="subField"
-        :contents="getContents(subField.name)"
-        :key="index"
-        :parents="[...parents, field]"
-        @input-change="onInputChange"
-      />
-    </div>
-  </transition>
+  <field
+    v-for="(subField, index) in field.fields"
+    v-if="!subField.readOnly"
+    :field="subField"
+    :contents="getContents(subField.name)"
+    :key="index"
+    :parents="[...parents, field]"
+    @input-change="onInputChange"
+  />
 </div>

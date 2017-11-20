@@ -11,8 +11,9 @@
 import set from 'lodash.set';
 import get from 'lodash.get';
 
-import Field from '@/components/Field';
+import ConfirmBtn from '@/components/Buttons/Confirm';
 import Notification from '@/components/Notification';
+import EditRow from '@/components/EditRow';
 
 export default {
   name: 'Edit',
@@ -39,8 +40,9 @@ export default {
     serverErrors: null
   },
   components: {
-    Field,
-    Notification
+    Notification,
+    ConfirmBtn,
+    EditRow
   },
 
   data () {
@@ -51,6 +53,7 @@ export default {
 
   methods: {
     onInputChange: function ({ parents, value }) {
+      console.log(parents, value);
       const newContents = { ...this.contents };
       const parentsNames = parents.map(parent => parent.name);
       set(newContents, parentsNames, value);

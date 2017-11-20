@@ -1,26 +1,34 @@
-<div class="edit">
-  <notification
-    v-if="showNotification"
-    :type="notificationType"
-    :message="message"
-  />
-  <form action="" ref="form">
-    <field
-      v-for="(field, index) in structure.fields"
-      v-if="!field.readOnly"
-      :field="field"
-      :contents="contents[field.name]"
-      :key="index"
-      :blocks="blocks"
-      @input-change="onInputChange"
-      @add-item="onAddItem"
-      @remove-item="onRemoveItem"
-    />
-  </form>
-  <button
-    v-if="requestDone"
-    class="edit__button"
-    @click="_submit"
-  >{{$t('submit')}}</button>
-  <p v-if="!requestDone">{{$t('updating')}} ...</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="edit">
+      <notification
+        v-if="showNotification"
+        :type="notificationType"
+        :message="message"
+      />
+      <form ref="form">
+        <div
+          v-for="(card, index) in structure.cards"
+          v-if="!card.readOnly"
+          :class="$style.fieldsGroup"
+        >
+          <edit-row
+            :card="card"
+            :contents="contents"
+            :blocks="blocks"
+            :index="index"
+            @input-change="onInputChange"
+            @add-item="onAddItem"
+            @remove-item="onRemoveItem"
+          />
+        </div>
+      </form>
+      <confirm-btn
+        v-if="requestDone"
+        :label="$t('submit')"
+        @click="_submit"
+      />
+      <p v-if="!requestDone">{{$t('updating')}} ...</p>
+    </div>
+  </div>
 </div>

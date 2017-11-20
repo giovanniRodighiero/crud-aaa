@@ -4,19 +4,24 @@ $page-kind-title-size: 22px !default;
 $page-kind-title-padding: 15px !default;
 
 .sideMenu {
-
-}
-
-.account {
-  text-align: center;
+  height: 100vh;
+  position: relative;
 }
 
 .wrapper {
   background-color: $color-dark;
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   padding: rem($wrapper-padding);
   text-align: center;
   color: $color-light;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.account {
+  text-align: center;
 }
 
 .dashboard {
@@ -33,6 +38,10 @@ $page-kind-title-padding: 15px !default;
   font-weight: bold;
   padding: rem($page-kind-title-padding) 0;
   margin: 0;
+}
+
+.pagesList {
+  padding: 0;
 }
 
 .pagesListItem {

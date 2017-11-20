@@ -24,11 +24,11 @@ export default {
     ]),
 
     // CREATE LABEL/VALUE OBJECTS TO USE WITH CARDS
-    prepareFields ({ label, name, fields, contents = false }) {
+    prepareFields ({ label, name, cards, contents = false }) {
       if (!contents)
         contents = this.contents;
       const preparedFields = [];
-      fields.forEach(field => {
+      cards.forEach(field => {
         if (field.showInHomepage && contents[name]) {
           const aux = {
             label: field.label,
@@ -38,7 +38,7 @@ export default {
           if (field.type === 'object')
             aux['infos'] = this.prepareFields({
               name: field.name,
-              fields: field.fields,
+              cards: field.fields,
               contents: contents[name]
             });
           if (field.type === 'array')
