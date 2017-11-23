@@ -6,7 +6,7 @@
         :type="notificationType"
         :message="message"
       />
-      <form ref="form">
+      <form ref="form" v-if="contentsReady">
         <div
           v-for="(card, index) in structure.cards"
           v-if="!card.readOnly"

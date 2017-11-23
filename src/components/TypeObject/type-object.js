@@ -23,7 +23,6 @@ export default {
 
   methods: {
     getContents: function (fieldName) {
-      console.log(fieldName, this.contents)
       if (this.contents)
         return this.contents[fieldName];
       return '';

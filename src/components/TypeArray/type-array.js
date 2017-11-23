@@ -4,6 +4,8 @@ import Field from '@/components/Field';
 import BreadCrumbs from '@/components/BreadCrumbs';
 import ToolTip from '@/components/ToolTip';
 import TypeObject from '@/components/TypeObject';
+import RemoveBtn from '@/components/Buttons/Delete';
+import AddBtn from '@/components/Buttons/Add';
 
 // TODO: props refactor
 export default {
@@ -14,7 +16,9 @@ export default {
     BreadCrumbs,
     ToolTip,
     TypeObject,
-    draggable
+    draggable,
+    RemoveBtn,
+    AddBtn
   },
 
   data () {
@@ -30,6 +34,11 @@ export default {
 
     addBlock: function (typeName) {
       let block = this.blocksToUse.find(block => block.typeName === typeName);
+      console.log({parents: [...this.parents, this.field],
+        value: {
+          typeName
+        },
+        fields: block.fields})
       this.$emit('add-item', {
         parents: [...this.parents, this.field],
         value: {
@@ -66,11 +75,12 @@ export default {
    },
 
   computed: {
+    filteredContents: function () {
+      return this.contents[this.field.name];
+    },
+
     toggleMessage: function () {
-      if (this.open)
-        return this.$t('collapse');
-      else
-        return this.$t('expand');
+      return this.open ? this.$t('collapse') : this.$t('expand');
     },
 
     blocksToUse: function () {
@@ -79,7 +89,7 @@ export default {
 
     myList: {
       get () {
-        return this.contents;
+        return this.filteredContents;
       },
       set (value) {
         this.$emit('input-change', {

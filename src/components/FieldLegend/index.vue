@@ -19,14 +19,15 @@ export default {
   .fieldLegend {
     height: 100%;
     width: 100%;
-    background-color: $color-grey;
+    // background-color: $color-grey;
+    border-right: 3px solid $color-grey;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .wrapper {
-    text-align: center;
+    text-align: left;
   }
 
   .title, .description {
@@ -35,9 +36,9 @@ export default {
   }
 
   .title {
-    font-size: font-size(lg);
+    font-size: rem(18);
     font-weight: bold;
-    padding: rem(10);
+    padding: rem(5);
   }
 
   .description {

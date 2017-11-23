@@ -1,14 +1,14 @@
 <template>
   <div class="type-input">
     <tool-tip :message="field.tipMessage" />
-    <bread-crumbs :field="field" :parents="parents" />
+    <label :for="field.name" class="type-input__label">{{field.label}}</label>
     <input
       class="type-input__input"
       type="checkbox"
       v-validate="field.validation || ''"
       :name="field.name"
       :value="checkboxValue"
-      :checked="contents"
+      :checked="checkboxValue"
       @click="onChange"
     />
   </div>
@@ -34,7 +34,8 @@ export default {
   },
 
   created () {
-    this.checkboxValue = this.contents;
+    if (this.contents[this.field.name])
+      this.checkboxValue = this.contents[this.field.name];
   },
 
   methods: {

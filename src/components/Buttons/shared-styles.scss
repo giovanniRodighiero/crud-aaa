@@ -4,6 +4,7 @@
   padding: 0;
   text-decoration: none;
   transition: all .25s ease-out;
+  border-radius: 0;
   &:hover {
     cursor: pointer;
   }
@@ -18,4 +19,9 @@
   font-size: font-size(md);
   position: relative;
   transition: transform .25s ease-out;
+}
+
+.labelSmall {
+  font-size: rem(14);
+  padding: rem(5) rem(20);
 }

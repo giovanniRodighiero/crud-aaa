@@ -1,9 +1,0 @@
-<div class="type-input">
-  <tool-tip :message="field.tipMessage" />
-  <bread-crumbs :field="field" :parents="parents" />
-  <vue-editor
-    v-model="htmlContents"
-    :id="generateInputId"
-    v-validate="field.validation || ''"
-  ></vue-editor>
-</div>

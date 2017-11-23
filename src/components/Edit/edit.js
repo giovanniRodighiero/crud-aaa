@@ -53,7 +53,6 @@ export default {
 
   methods: {
     onInputChange: function ({ parents, value }) {
-      console.log(parents, value);
       const newContents = { ...this.contents };
       const parentsNames = parents.map(parent => parent.name);
       set(newContents, parentsNames, value);
@@ -81,6 +80,10 @@ export default {
   },
 
   computed: {
+    contentsReady: function () {
+      return (this.contents && Object.keys(this.contents).length > 0);
+    },
+
     blocks: function () {
       return this.structure.blocks;
     },

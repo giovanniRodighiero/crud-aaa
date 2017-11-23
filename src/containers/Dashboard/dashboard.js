@@ -41,8 +41,15 @@ export default {
               cards: field.fields,
               contents: contents[name]
             });
-          if (field.type === 'array')
-            aux['value'] = contents[name][field.name].length;
+          // if (field.type === 'array') {
+          //   console.log(field)
+          //   aux['infos'] = this.prepareFields({
+          //     name: field.name,
+          //     cards: field.fields,
+          //     contents: contents[name]
+          //   });
+          //   // aux['value'] = contents[name][field.name].length;
+          // }
           preparedFields.push(aux);
         }
       });

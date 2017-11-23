@@ -44,17 +44,19 @@ export default {
     transform-origin: center;
   }
 
-  .confirmLabel {
+  .btnConfirm {
     &:hover {
-      transform: translateX(-15%);
-      &::after {
-        @extend .basePseudo;
-        width: 8px;
-        transform: rotateZ(45deg) translateY(-50%) translate(-7px, 10px);
-      }
-      &::before {
-        @extend .basePseudo;
-        transform: rotateZ(-45deg) translateY(-50%);
+      .confirmLabel {
+        transform: translateX(-15%);
+        &::after {
+          @extend .basePseudo;
+          width: 8px;
+          transform: rotateZ(45deg) translateY(-50%) translate(-7px, 10px);
+        }
+        &::before {
+          @extend .basePseudo;
+          transform: rotateZ(-45deg) translateY(-50%);
+        }
       }
     }
   }

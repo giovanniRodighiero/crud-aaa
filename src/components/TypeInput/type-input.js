@@ -44,7 +44,11 @@ export default {
 
     customModel: {
       get() {
-        return this.contents;
+        if (typeof this.contents != 'object')
+          return this.contents;
+        if (typeof this.contents[this.field.name] === 'string')
+          return this.contents[this.field.name];
+        return '';
       },
       set(value) {
         this.$emit('input-change', {

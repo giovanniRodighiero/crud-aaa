@@ -1,7 +1,7 @@
 import { mapGetters, mapActions } from 'vuex';
 
 import ToolTip from '@/components/ToolTip';
-import BreadCrumbs from '@/components/BreadCrumbs';
+import RemoveBtn from '@/components/Buttons/Delete';
 
 export default {
   name: 'TypeImage',
@@ -9,7 +9,7 @@ export default {
 
   components: {
     ToolTip,
-    BreadCrumbs
+    RemoveBtn
   },
 
   data () {

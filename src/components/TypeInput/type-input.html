@@ -1,12 +1,13 @@
 <div class="type-input">
   <tool-tip :message="field.tipMessage" />
-  <bread-crumbs :field="field" :parents="parents" />
+  <label :for="field.name" class="type-input__label">{{field.label}}</label>
   <input
     v-if="useInput"
     ref="input"
     class="type-input__input"
     v-validate="field.validation || ''"
     v-model="customModel"
+    :id="field.name"
     :name="field.name"
     :class="{'type-input__input--errors': errors.has(field.name)}"
   />

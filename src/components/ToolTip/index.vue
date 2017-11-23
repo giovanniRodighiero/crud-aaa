@@ -1,6 +1,6 @@
 <template>
-<div class="tooltip" v-if="messagePresent">
-  <svg class="tooltip__icon icon icon-info">
+<div :class="$style.tooltip" v-if="messagePresent">
+  <svg :class="[$style.icon, $style.tooltipIcon]">
     <use xlink:href="#icon-info"></use>
     <symbol id="icon-info" viewBox="0 0 32 32">
     <title>info</title>
@@ -10,7 +10,7 @@
     </symbol>
   </svg>
 
-  <p class="tooltip__message">{{message}}</p>
+  <p :class="$style.message">{{message}}</p>
 </div>
 </template>
 
@@ -32,12 +32,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .icon {
   color: black;
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
@@ -46,12 +46,12 @@ export default {
 .tooltip {
   position: absolute;
   z-index: 1;
-  top: 0;
-  left: 0;
+  top: -5px;
+  left: -10px;
   text-align: right;
 }
 
-.tooltip__icon {
+.tooltipIcon {
   &:hover {
     & + p {
       opacity: 1;
@@ -61,7 +61,7 @@ export default {
   }
 }
 
-.tooltip__message {
+.message {
   text-align: left;
   width: 200px;
   background-color: $white;

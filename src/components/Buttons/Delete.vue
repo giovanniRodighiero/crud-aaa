@@ -1,6 +1,6 @@
 <template>
   <button :class="[$style.btn, $style.btnDelete]" :type="type" @click="$emit('click')">
-    <span :class="[$style.label, $style.deleteLabel]">{{label}}</span>
+    <span :class="[$style.label, $style.deleteLabel, labelSize]">{{label}}</span>
   </button>
 </template>
 
@@ -11,7 +11,16 @@ export default {
       type: String,
       default: 'button'
     },
-    label: String
+    label: String,
+    size: {
+      type: String,
+      default: 'md'
+    }
+  },
+  computed: {
+    labelSize: function () {
+      return this.size === 'sm' ? this.$style.labelSmall : '';
+    }
   }
 }
 </script>
@@ -44,17 +53,19 @@ export default {
     transform-origin: top;
   }
 
-  .deleteLabel {
+  .btnDelete {
     &:hover {
-      transform: translateX(-15%);
+      .deleteLabel {
+        transform: translateX(-15%);
 
-      &::after {
-        @extend .basePseudo;
-        transform: rotateZ(45deg) translateY(-50%);
-      }
-      &::before {
-        @extend .basePseudo;
-        transform: rotateZ(-45deg) translateY(-50%);
+        &::after {
+          @extend .basePseudo;
+          transform: rotateZ(45deg) translateY(-50%);
+        }
+        &::before {
+          @extend .basePseudo;
+          transform: rotateZ(-45deg) translateY(-50%);
+        }
       }
     }
   }

@@ -5,9 +5,10 @@
     </div>
     <div class="col-xs-10">
       <field
-        v-for="(field, subindex) in card.fields"
+        v-for="(field, subindex) in fieldsToUse"
         :field="field"
-        :contents="contents[card.name]"
+        :contents="filterdContents"
+        :parents="filteredParents"
         :key="subindex"
         :blocks="blocks"
         @input-change="value => $emit('input-change', value)"
@@ -32,6 +33,23 @@ export default {
   components: {
     FieldLegend,
     Field
+  },
+  computed: {
+    filterdContents: function () {
+      if (this.card.name && this.card.fields)
+        return this.contents[this.card.name];
+      return this.contents;
+    },
+    filteredParents: function () {
+      if (this.card.name && this.card.fields)
+        return [this.card];
+      return [];
+    },
+    fieldsToUse: function () {
+      if (this.card.fields && this.card.fields.length > 0)
+        return this.card.fields;
+      return [this.card];
+    }
   }
 }
 </script>

@@ -2,4 +2,4 @@
 
 <script src="./type-array.js"></script>
 
-<style lang="scss" src="./type-array.scss"></style>
+<style lang="scss" src="./type-array.scss" module></style>

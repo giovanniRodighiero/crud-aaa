@@ -1,68 +1,38 @@
 <div class="type-array type-input">
+  <div :class="$style.preview">
     <tool-tip :message="field.tipMessage" />
-    <bread-crumbs :field="field" :parents="parents" />
-    <button
-    type="button"
-    @click="toggleVisibility"
-    class="type-object__toggle"
-  >{{toggleMessage}}
-    <svg class="icon icon--button" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <use :xlink:href="open ? '#open' : '#closed'"></use>
-      <defs>
-        <symbol id="closed" viewBox="0 0 44 32">
-        <title>menu3</title>
-        <path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path>
-        <path d="M31 14l6 6 6-6z"></path>
-      </symbol>
-        <symbol id="open" viewBox="0 0 44 32">
-        <title>menu4</title>
-        <path d="M0 6h28v6h-28v-6zM0 14h28v6h-28v-6zM0 22h28v6h-28v-6z"></path>
-        <path d="M31 20l6-6 6 6z"></path>
-      </symbol>
-      </defs>
-    </svg>
-  </button>
-    <transition name="type-object__accordion">
-      <div v-if="open">
-        <div class="type-array__add">
-          <button
-            v-for="(block, index) in blocksToUse"
-            type="button"
-            @click="addBlock(block.typeName)"
-          >
-          {{block.label}}
-          <svg class="icon">
-            <use xlink:href="#icon-plus"></use>
-            <symbol id="icon-plus" viewBox="0 0 32 32">
-              <title>plus</title>
-              <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
-            </symbol>
-          </svg>
-        </button>
-        </div>
-        <div>
-          <draggable v-model='myList'>
-            <div
-              class="type-array__item"
-              v-for="(blocksContent, blocksIndex) in contents"
-            >
-              <type-object
-                class="field"
-                :field="blockField(blocksContent, blocksIndex)"
-                :contents="blocksContent"
-                :parents="[...parents, field ]"
-                :blocks="blocks"
-                @input-change="onInputChange"
-                :key="blocksIndex"
-              />
-              <button
-                type="button"
-                class="type-array__remove"
-                @click="removeBlock(blocksIndex)"
-              >{{$t('remove')}}</button>
-            </div>
-          </draggable>
-        </div>
-      </div>
-    </transition>
+    <label :for="field.name" class="type-input__label" :class="$style.label">{{field.label}}</label>
+    <add-btn
+      v-for="(block, index) in blocksToUse"
+      size="sm"
+      :key="index"
+      :label="block.label"
+      :class="$style.previewItem"
+      @click="addBlock(block.typeName)"
+    />
+  </div>
+  <draggable v-model='myList'>
+    <div
+      class="type-array__item"
+      v-for="(blocksContent, blocksIndex) in filteredContents"
+    >
+      <type-object
+        class="field"
+        :field="blockField(blocksContent, blocksIndex)"
+        :contents="blocksContent"
+        :parents="[...parents, field ]"
+        :blocks="blocks"
+        @input-change="onInputChange"
+        :key="blocksIndex"
+      >
+        <remove-btn
+          slot="removeBtn"
+          type="button"
+          size="sm"
+          :label="$t('remove')"
+          @click.stop="removeBlock(blocksIndex)"
+        />
+      </type-object>
+    </div>
+  </draggable>
   </div>

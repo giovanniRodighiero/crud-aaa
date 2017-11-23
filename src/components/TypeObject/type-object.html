@@ -1,13 +1,18 @@
-<div class="type-object type-input">
-  <span>OK</span>
-  <tool-tip :message="field.tipMessage" />
-  <field
-    v-for="(subField, index) in field.fields"
-    v-if="!subField.readOnly"
-    :field="subField"
-    :contents="getContents(subField.name)"
-    :key="index"
-    :parents="[...parents, field]"
-    @input-change="onInputChange"
-  />
+<div class="type-object type-input" :class="$style.wrapper">
+  <div :class="$style.preview" @click="toggleVisibility">
+    <span>{{field.label}}</span>
+    <tool-tip :message="field.tipMessage" />
+    <slot name="removeBtn" />
+  </div>
+  <div v-if="open" :class="$style.contents">
+    <field
+      v-for="(subField, index) in field.fields"
+      v-if="!subField.readOnly"
+      :field="subField"
+      :contents="getContents(subField.name)"
+      :key="index"
+      :parents="[...parents, field]"
+      @input-change="onInputChange"
+    />
+  </div>
 </div>
