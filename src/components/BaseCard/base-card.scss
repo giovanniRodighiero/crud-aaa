@@ -1,0 +1,53 @@
+.card {
+  border: 1px solid $color-dark;
+  position: relative;
+  margin: 15px;
+}
+
+.title {
+  text-align: center;
+  padding: 10px 5px;
+  width: 100%;
+  background-color: $color-dark;
+  p {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+  }
+}
+
+.fieldList {
+  margin: 0 30px;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 50px;
+}
+
+.field {
+  padding: 10px 0;
+  & > .base-card-field-simple {
+    padding: 0;
+    border-bottom: 1px solid $color-dark;
+    & > .base-card-field-simple__label {
+      font-weight: bold;
+    }
+  }
+}
+
+.fieldLabel {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.fieldValue {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: rem(5);
+}

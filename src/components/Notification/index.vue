@@ -66,16 +66,16 @@ export default {
     color: white;
     min-height: 100px;
     margin: 0 auto;
-    border: 1px solid $grey;
+    border: 1px solid $color-grey;
     position: relative;
   }
 
   .notification--danger {
-    background-color: $red;
+    background-color: $color-red;
   }
 
   .notification--success {
-    background-color: $green;
+    background-color: $color-green;
   }
 
   .notification__close {

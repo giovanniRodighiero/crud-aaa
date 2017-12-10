@@ -2,4 +2,4 @@
 
 <script src="./edit.js"></script>
 
-<style lang="scss" src="./edit.scss"></style>
+<style lang="scss" src="./edit.scss" module></style>

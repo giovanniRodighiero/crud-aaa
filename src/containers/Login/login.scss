@@ -1,27 +1,64 @@
-.login__title {
+$form-margin: 20px !default;
+$form-padding: 5px !default;
+$error-size: md;
+$errors-margin: 30px !default;
+$errors-title-margin: 15px !default;
+
+.login {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+}
+
+.title, .form {
   text-align: center;
 }
 
-.login__form {
+.title {
+  color: $color-light;
+  font-size: font-size(xxl);
+}
+
+.formWrapper {
+  width: 100%;
+  background-color: $color-dark;
+  margin: rem($form-margin);
+  padding: rem($form-padding) 0;
+}
+
+.errors {
+  width: 90%;
+  margin: rem($errors-margin) auto;
   text-align: center;
 }
 
-.login__errors {
-  margin: 50px auto;
-  & > ul > li {
-    color: $red;
-    font-size: 18px;
-  }
+.errorsTitle {
+  color: $color-light;
+  font-size: font-size(lg);
+  margin: rem($errors-title-margin) auto;
 }
 
-.login__item {
+.errorsList {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: $color-red;
+  font-size: font-size($error-size);
+}
+
+.fieldWrapper {
   text-align: center;
   margin: 100px 0;
   & > label {
     display: block;
     margin: 15px 0;
     text-transform: uppercase;
-    color: $dark-blue;
+    color: $color-light;
     font-weight: bold;
   }
   & > input {
@@ -32,22 +69,8 @@
     font-size: 18px;
     padding: 5px 20px;
     border: none;
-    border-bottom: 3px solid $dark-blue;
+    border-bottom: 3px solid $color-dark;
     text-align: center;
-    color: $grey;
-  }
-  & > button {
-    border: none;
-    background-color: $green;
-    color: white;
-    padding: 10px 20px;
-    font-size: 20px;
-    transition: background-color .25s ease-out, color .25s ease-out, border .25s ease-out;
-    &:hover {
-      cursor: pointer;
-      background-color: white;
-      color: $green;
-      border: 2px solid $green;
-    }
+    color: $color-dark;
   }
 }

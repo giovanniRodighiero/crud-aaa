@@ -1,0 +1,23 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+  <div :class="$style.card">
+    <div :class="$style.title">
+      <p>{{ title }}</p>
+    </div>
+    <ul :class="$style.fieldList">
+      <li
+        v-for="(field, index) in fieldsInfos"
+        :class="$style.field"
+        :key="index"
+      >
+        <base-card-field v-bind="field" />
+      </li>
+    </ul>
+    <div :class="$style.linkWrapper">
+      <base-btn
+        :to="`/single-pages/${name}`"
+        :label="$t('edit')"
+      />
+
+    </div>
+  </div>
+</div>

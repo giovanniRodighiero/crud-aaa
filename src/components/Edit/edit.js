@@ -11,8 +11,9 @@
 import set from 'lodash.set';
 import get from 'lodash.get';
 
-import Field from '@/components/Field';
+import ConfirmBtn from '@/components/Buttons/Confirm';
 import Notification from '@/components/Notification';
+import EditRow from '@/components/EditRow';
 
 export default {
   name: 'Edit',
@@ -39,8 +40,9 @@ export default {
     serverErrors: null
   },
   components: {
-    Field,
-    Notification
+    Notification,
+    ConfirmBtn,
+    EditRow
   },
 
   data () {
@@ -78,6 +80,10 @@ export default {
   },
 
   computed: {
+    contentsReady: function () {
+      return (this.contents && Object.keys(this.contents).length > 0);
+    },
+
     blocks: function () {
       return this.structure.blocks;
     },

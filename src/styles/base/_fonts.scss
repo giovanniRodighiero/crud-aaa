@@ -1,0 +1,13 @@
+$font-family: 'Roboto', sans-serif;
+$font-family-base: $font-family;
+
+$font-size-default: 16px;
+
+$font-sizes: (
+  xxl: ceil($font-size-default * 2.5),
+  xl: ceil($font-size-default * 2),
+  lg: ceil($font-size-default * 1.5),
+  md: $font-size-default,
+  sm: ceil($font-size-default * 0.8),
+  xs: ceil($font-size-default * 0.5)
+);

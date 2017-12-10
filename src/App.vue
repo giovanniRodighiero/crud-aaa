@@ -1,7 +1,9 @@
 <template>
-  <div class="root-wrapper row reverse">
-    <router-view></router-view>
-    <router-view name="SideMenu"></router-view>
+  <div :class="$style.rootWrapper">
+    <div class="row">
+      <router-view name="SideMenu"></router-view>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -32,7 +34,7 @@ export default {
       default: 'en'
     }
   },
-  created () {
+  async created () {
 
     // SET UP VALIDATION MESSAGES LANG
     this.$validator.locale = this.lang;
@@ -45,7 +47,7 @@ export default {
     this.axios.defaults.baseUrl = this.baseUrl;
 
     // SET THE INFOS IN THE STORE (ConfigModule)
-    this.initialSetup({
+    await this.initialSetup({
       baseUrl: this.baseUrl,
       configEndpoint: this.configEndpoint,
       loginEndpoint: this.loginEndpoint
@@ -60,10 +62,11 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import "./styles/main-styles.scss";
+<style lang="scss" module>
+@import "./styles/app.scss";
 
-.root-wrapper {
+.rootWrapper {
   width: 100%;
+  overflow-x: hidden;
 }
 </style>

@@ -25,12 +25,13 @@ const actions = {
   },
 
   // APP INITIAL SET-UP
-  initialSetup: ({ commit, dispatch }, options) => {
+  initialSetup: ({ commit, dispatch }, options) => new Promise(async (resolve, reject) => {
     commit(configModule_mutationTypes.setBaseUrl, options.baseUrl);
     commit(configModule_mutationTypes.setConfigEndpoint, options.configEndpoint);
     commit(configModule_mutationTypes.setLoginEndpoint, options.loginEndpoint);
-    dispatch('setConfig');
-  },
+    await dispatch('setConfig');
+    return resolve();
+  }),
 
   // SET LOCALE PROXY ACTION
   setLocale: ({ commit }, locale) => {

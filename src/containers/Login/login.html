@@ -1,24 +1,31 @@
-<main class="login col-xs-12">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1 class="login__title">{{$t('login')}}</h1>
-      <div class="login__errors" v-if="showErrors">
-        <ul>
-          <li v-for="err in errorMessages">{{err}}</li>
-        </ul>
-      </div>
-      <div class="login__form-wrapper">
-        <form class="login__form">
-          <div class="login__item">
+<main class="row">
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 middle-xs">
+    <div :class="$style.login">
+      <div :class="$style.formWrapper">
+        <h1 :class="$style.title">{{$t('login')}}</h1>
+        <form
+        novalidate
+        :class="$style.form"
+        @submit.prevent="submit">
+          <div :class="$style.fieldWrapper">
             <label for="email">Email</label>
             <input type="text" name="email" id="email" v-model="email" />
           </div>
-          <div class="login__item">
+          <div :class="$style.fieldWrapper">
             <label for="password">Password</label>
             <input type="password" name="password" id="password" v-model="password"/>
           </div>
-          <div class="login__item">
-            <button type="button" @click="submit">{{$t('loginButton')}}</button>
+          <div :class="$style.fieldWrapper">
+            <neutral-btn
+              type="submit"
+              :label="$t('loginButton')"
+            />
+          </div>
+          <div :class="$style.errors" v-if="showErrors">
+            <p :class="$style.errorsTitle">{{$t('errorsTitle')}}</p>
+            <ul :class="$style.errorsList">
+              <li v-for="err in errorMessages" :class="$style.error">{{err}}</li>
+            </ul>
           </div>
         </form>
       </div>

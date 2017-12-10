@@ -1,34 +1,18 @@
-.type-array {
-  .type-object {
-    background-color: $white;
-  }
+.wrapper {
+  border-bottom: 1px solid $color-dark;
+  width: 95%;
 }
 
-.type-object__toggle {
-  padding: 5px 35px 5px 10px;
-  position: relative;
-  display: inline-block;
-  border: 1px solid $grey;
-  background-color: #eee;
-  border-radius: 15px;
-  &:hover {
-    cursor: pointer;
-  }
+.preview {
+  border-bottom: 1px solid $color-dark;
+  width: 100%;
+  background-color: white;
+  padding: rem(5) rem(10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.type-object__accordion-enter-active, .type-object__accordion-leave-active {
-  transition: opacity .25s ease-out;
-}
-
-.type-object__accordion-enter, .type-object__accordion-leave-to {
-  opacity: 0;
-}
-
-.icon.icon--button {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  height: 20px;
-  width: 20px;
-  transform: translateY(-50%);
+.contents {
+  padding-top: rem(5);
 }

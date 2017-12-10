@@ -1,11 +1,13 @@
 import { mapGetters, mapActions } from 'vuex';
 
 import Edit from '@/components/Edit';
+import PageHero from '@/components/PageHero';
 
 export default {
   name: 'EditPage',
   components: {
-    Edit
+    Edit,
+    PageHero
   },
 
   data () {
@@ -70,7 +72,7 @@ export default {
       return this.pagesContents[this.activePageName];
     },
     ready: function () {
-      return (!!this.structure && !!this.contents);
+      return (!!this.structure && !!this.contents && Object.keys(this.contents).length > 0);
     }
   },
 

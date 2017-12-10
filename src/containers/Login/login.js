@@ -1,13 +1,19 @@
 import { mapActions, mapGetters } from 'vuex';
+import NeutralBtn from '@/components/Buttons/Neutral';
 
 export default {
   name: 'Login',
+  components: {
+    NeutralBtn
+  },
+
   data () {
     return {
       email: '',
       password: ''
     }
   },
+
   methods: {
     ...mapActions('LoginModule', [
       'submitLogin'
@@ -20,6 +26,7 @@ export default {
       }
     },
   },
+
   computed: {
     ...mapGetters('LoginModule', [
       'isFetching',

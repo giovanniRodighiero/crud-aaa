@@ -2,4 +2,4 @@
 
 <script src="./type-image.js"></script>
 
-<style lang="scss" src="./type-image.scss"></style>
+<style lang="scss" src="./type-image.scss" module></style>

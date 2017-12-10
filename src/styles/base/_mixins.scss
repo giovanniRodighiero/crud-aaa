@@ -1,0 +1,21 @@
+// HANDLES FONT-SIZE AS A FUNCTION USING $font-sizes MAPs
+@function font-size($size, $rem: true) {
+  $result: $size;
+  @if map-has-key($font-sizes, $size) {
+      $result: map-get($font-sizes, $size);
+  }
+
+  @if $rem == true {
+      @return rem($result);
+  }
+
+  @return $result;
+}
+
+// CALC CORRECT REM VALUE BASED ON PIXEL
+@function rem($pixels) {
+  @if (unitless($pixels)) {
+      $pixels: $pixels * 1px;
+  }
+  @return #{$pixels / $font-size-default}rem;
+}

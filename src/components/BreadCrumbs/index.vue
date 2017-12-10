@@ -39,7 +39,7 @@ export default {
     &:not(:last-of-type) {
       font-weight: normal;
       font-size: 14px;
-      color: $grey;
+      color: $color-grey;
       &::after {
         content: '>';
         position: absolute;

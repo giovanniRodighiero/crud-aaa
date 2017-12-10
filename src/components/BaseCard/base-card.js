@@ -1,5 +1,8 @@
+import BaseCardField from '@/components/BaseCardField';
+import BaseBtn from '@/components/Buttons/Neutral';
+
 export default {
-  name: 'Card',
+  name: 'BaseCard',
   props: {
     title: {
       type: String,
@@ -17,4 +20,8 @@ export default {
       required: false
     }
   },
+  components: {
+    BaseCardField,
+    BaseBtn
+  }
 }

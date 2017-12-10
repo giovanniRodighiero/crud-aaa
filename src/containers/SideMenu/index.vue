@@ -2,4 +2,4 @@
 
 <script src="./side-menu.js"></script>
 
-<style lang="scss" src="./side-menu.scss"></style>
+<style lang="scss" src="./side-menu.scss" module></style>

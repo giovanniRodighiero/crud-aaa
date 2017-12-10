@@ -13,7 +13,10 @@ export default {
     collapse: 'Nascondi',
     expand: 'Mostra',
     uploadError: 'Errore durante l\'upload',
-    logout: 'Esci'
+    logout: 'Esci',
+    edit: 'Modifica',
+    singlePages: 'Pagine uniche',
+    errorsTitle: 'Ops ! Si è verificato un errore.'
   },
   en: {
     pages: 'Pages',
@@ -29,6 +32,9 @@ export default {
     collapse: 'Hide',
     expand: 'Expand',
     uploadError: 'Error while uploading',
-    logout: 'Logout'
+    logout: 'Logout',
+    edit: 'Edit',
+    singlePages: 'Unique pages',
+    errorsTitle: 'Ops ! An error occured.'
   }
 };

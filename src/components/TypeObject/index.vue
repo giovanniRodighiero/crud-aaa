@@ -2,4 +2,4 @@
 
 <script src="./type-object.js"></script>
 
-<style lang="scss" src="./type-object.scss"></style>
+<style lang="scss" src="./type-object.scss" module></style>

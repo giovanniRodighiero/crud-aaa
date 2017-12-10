@@ -1,28 +1,29 @@
 <div class="type-input">
   <tool-tip :message="field.tipMessage" />
-  <bread-crumbs :field="field" :parents="parents" />
-  <div class="type-image__preview">
-    <p class="type-image__errors" v-if="errorUploading">{{$t('uploadError')}}</p>
+  <label :for="field.name" class="type-input__label">{{field.label}}</label>
+  <div :class="$style.preview">
+    <p v-if="errorUploading" :class="$style.errors">{{$t('uploadError')}}</p>
     <img
       v-if="image"
       :src="image"
-      class="type-image__image"
+      :class="$style.image"
     />
-    <div class="type-image__actions">
-      <label :for="generateInputId" class="type-image__label type-image__button">{{uploadLabel}}</label>
+    <div :class="$style.actions">
+      <label :for="generateInputId" :class="$style.imageLabel">{{uploadLabel}}</label>
       <input
         :id="generateInputId"
         type="file"
         v-validate="field.validation || ''"
         @change="onFileUpload"
-        class="type-image__input"
+        :class="$style.input"
       />
-      <button
+      <remove-btn
         v-if="image"
-        type="button"
-        class="type-image__remove type-image__button"
+        size="sm"
+        :class="$style.removeBtn"
+        :label="$t('delete')"
         @click="onRemove"
-      >{{$t('delete')}}</button>
+      />
     </div>
   </div>
 </div>
